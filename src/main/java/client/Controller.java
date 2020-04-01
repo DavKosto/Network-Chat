@@ -66,6 +66,7 @@ public class Controller implements Initializable {
         textAreas = new ArrayList<>();
         textAreas.add(chatArea);
     }
+
     private void setAuthorized(boolean isAuthorized) {
         if (!isAuthorized) {
             registrationPanel.setVisible(true);
@@ -120,7 +121,7 @@ public class Controller implements Initializable {
 
                     while (true) {
                         String str = in.readUTF();
-                        if (str.startsWith("authok")) {
+                        if (str.startsWith("authOk")) {
                             setCommunication(true);
                             break;
                         } else {
@@ -132,13 +133,13 @@ public class Controller implements Initializable {
                     while (true) {
                         String str = in.readUTF();
                         if (str.startsWith("/")) {
-                            if (str.equals("/serverclosed")){
+                            if (str.equals("/serverClosed")){
                                 chatArea.clear();
                                 setCommunication(false);
                                 setAuthorized(false);
                                 break;
                             }
-                            if (str.startsWith("/clientslist ")) {
+                            if (str.startsWith("/clientsList ")) {
                                 String[] tokens = str.split(" ");
                                 Platform.runLater(() -> {
                                     clientsList.getItems().clear();
@@ -203,12 +204,20 @@ public class Controller implements Initializable {
         }
     }
 
-    public void setAuthorizedAndAuth(ActionEvent actionEvent){
+    public void setAuthorizedPanel(ActionEvent actionEvent){
         if (socket == null || socket.isClosed()) {
             connect();
         }
         setAuthorized(true);
     }
+
+    public void setRegistrationPanel(ActionEvent actionEvent){
+        if (socket == null || socket.isClosed()) {
+            connect();
+        }
+        setAuthorized(false);
+    }
+
 
     public void selectClient(MouseEvent mouseEvent) {
         if(mouseEvent.getClickCount() == 2) {

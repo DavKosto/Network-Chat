@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java_3-Lesson_6" />
+        <module name="network_chat" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java_3-Lesson_6" target="8" />
+      <module name="network_chat" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

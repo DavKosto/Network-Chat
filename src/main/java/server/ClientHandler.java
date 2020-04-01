@@ -71,7 +71,7 @@ public class ClientHandler {
                                     LOGGER.info("Загрузка истории сообщения " + newNick + " из БД");
                                     LinkedList<String> linkedList = AuthService.getMessageHistory();
                                     nick = newNick;
-                                    sendMsg("authok");
+                                    sendMsg("authOk");
                                     for (String s : linkedList) {
                                         sendMsg(s);
                                     }
@@ -96,7 +96,7 @@ public class ClientHandler {
                         if (str.startsWith("/")) {
                             if (str.equals("/exit")) {
                                 LOGGER.info("Клиент хочет отключиться");
-                                out.writeUTF("/serverclosed");
+                                out.writeUTF("/serverClosed");
                                 break;
                             }
                             if (str.startsWith("/w ")) {

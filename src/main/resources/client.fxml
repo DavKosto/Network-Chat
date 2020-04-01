@@ -7,13 +7,14 @@
         <TextField HBox.hgrow="ALWAYS" promptText="Логин" fx:id="loginFieldRegistr"/>
         <PasswordField HBox.hgrow="ALWAYS" promptText="Пароль" fx:id="passwordFieldRegistr"/>
         <TextField HBox.hgrow="ALWAYS" promptText="Ник" fx:id="nick" onAction="#tryToRegs"/>
-        <Button text="Зарегистрироваться" onAction="#tryToRegs"/>
-        <Button text="Вход" onAction="#setAuthorizedAndAuth"/>
+        <Button text="Sign up" onAction="#tryToRegs"/>
+        <Button text="Sign in" onAction="#setAuthorizedPanel"/>
     </HBox>
     <HBox fx:id="upperPanel" managed="false" visible="false">
         <TextField fx:id="loginField" promptText="Логин" HBox.hgrow="ALWAYS" />
         <PasswordField fx:id="passwordField" onAction="#tryToAuth" promptText="Пароль" />
-        <Button onAction="#tryToAuth" text="Авторизоваться" />
+        <Button onAction="#tryToAuth" text="Enter" />
+        <Button text="Sign up" onAction="#setRegistrationPanel"/>
     </HBox>
     <HBox VBox.vgrow="ALWAYS">
         <VBox HBox.hgrow="ALWAYS">

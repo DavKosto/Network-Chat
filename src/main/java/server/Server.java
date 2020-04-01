@@ -86,7 +86,7 @@ public class Server {
 
     public void broadcastClientsList() {
         StringBuilder sb = new StringBuilder();
-        sb.append("/clientslist ");
+        sb.append("/clientsList ");
         for (ClientHandler o : clients) {
             sb.append(o.getNick()).append(" ");
         }
